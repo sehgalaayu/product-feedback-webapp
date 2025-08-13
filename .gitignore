@@ -1,0 +1,5 @@
+node_modules
+dist
+.env
+src/models/example-usage.ts
+src/validations/example-usage.ts
