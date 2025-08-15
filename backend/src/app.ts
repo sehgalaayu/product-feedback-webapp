@@ -15,7 +15,12 @@ const PORT = process.env.PORT || 8080;
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://your-frontend-name.onrender.com'] // Replace with your actual frontend URL
+    : ['http://localhost:5173'],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
